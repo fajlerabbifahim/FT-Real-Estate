@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaLock, FaUsers } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerIMG from "../../assets/Login-Images/register.jpg";
 import Navbar from "../../Components/Navbar/Navbar";
 import useAuth from "../../Hooks/useAuth";
@@ -8,12 +8,13 @@ import { useForm } from "react-hook-form";
 const Register = () => {
   const { registerUser } = useAuth();
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
   const handleRegister = (data) => {
     console.log("register data ", data);
     registerUser(data.email, data.password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         alert("user create successful");
+        navigate("/");
       })
       .catch((e) => {
         console.log("error message", e.message);

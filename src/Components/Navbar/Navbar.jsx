@@ -5,7 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
   // Dynamic Links as JSX Variable
   const links = (
     <>
@@ -58,7 +58,10 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-6 items-center">
           {links}
           {user?.email ? (
-            <button className="px-4 py-2 bg-[#D72638] text-[#FFFFFF] rounded transition duration-300 hover:bg-[#FF5E5E]">
+            <button
+              onClick={() => logOut()}
+              className="px-4 py-2 bg-[#D72638] text-[#FFFFFF] rounded transition duration-300 hover:bg-[#FF5E5E]"
+            >
               Logout
             </button>
           ) : (
@@ -88,7 +91,10 @@ const Navbar = () => {
           {links}
 
           {user?.email ? (
-            <button className="px-4 py-2 bg-[#D72638] text-[#FFFFFF] rounded transition duration-300 hover:bg-[#FF5E5E]">
+            <button
+              onClick={() => logOut()}
+              className="px-4 py-2 bg-[#D72638] text-[#FFFFFF] rounded transition duration-300 hover:bg-[#FF5E5E]"
+            >
               Logout
             </button>
           ) : (

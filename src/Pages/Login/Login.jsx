@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/Login-Images/login.jpg";
 import Navbar from "../../Components/Navbar/Navbar";
 import useAuth from "../../Hooks/useAuth";
@@ -8,7 +8,19 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { login } = useAuth();
-  const {} = useForm();
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const handleLogin = (data) => {
+    console.log("login data", data);
+    login(data.email, data.password)
+      .then(() => {
+        alert("login successfully");
+        navigate("/");
+      })
+      .catch((e) => {
+        console.log("login error", e.message);
+      });
+  };
   return (
     <>
       <header>
@@ -39,12 +51,16 @@ const Login = () => {
                   <h2 className="text-2xl font-bold text-[#00509E]">Login</h2>
                 </div>
 
-                <form className="space-y-4">
+                <form
+                  onSubmit={handleSubmit(handleLogin)}
+                  className="space-y-4"
+                >
                   {/* Email */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
                     <FaEnvelope className="text-[#00509E]" />
                     <input
                       type="email"
+                      {...register("email")}
                       placeholder="Email"
                       className="flex-1 outline-none border-none pl-3"
                     />
@@ -55,6 +71,7 @@ const Login = () => {
                     <FaLock className="text-[#00509E]" />
                     <input
                       type="password"
+                      {...register("password")}
                       placeholder="Password"
                       className="flex-1 outline-none border-none pl-3"
                     />
