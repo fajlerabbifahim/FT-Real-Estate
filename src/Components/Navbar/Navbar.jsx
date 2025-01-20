@@ -20,6 +20,16 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
+        to="/allProperties"
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#FFC947] font-semibold"
+            : "hover:text-gray-300 transition duration-300"
+        }
+      >
+        All Properties
+      </NavLink>
+      <NavLink
         to="/contact"
         className={({ isActive }) =>
           isActive

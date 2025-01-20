@@ -1,7 +1,7 @@
 import React from "react";
 import useProperties from "../../../Hooks/useProperties";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+
 import Loader from "../../../Components/Loader/Loader";
 
 function PropertieSection() {
@@ -11,8 +11,6 @@ function PropertieSection() {
     return <Loader />;
   }
 
-  console.log("property", data);
-
   return (
     <div>
       <SectionTitle
@@ -21,7 +19,7 @@ function PropertieSection() {
           "Search over 2000 properties to rent from the top agents in the country"
         }
       />
-      <div className="py-8 px-4">
+      <div className=" px-4">
         <h2 className="text-2xl font-bold text-center mb-6">Our Properties</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {data.map((property) => (
