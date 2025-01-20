@@ -3,6 +3,7 @@ import useProperties from "../../Hooks/useProperties";
 import Loader from "../../Components/Loader/Loader";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Navbar from "../../Components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 function AllProperties() {
   const [data, , isLoading] = useProperties();
@@ -61,9 +62,11 @@ function AllProperties() {
                     Price Range: {property.priceRange.minPrice} -{" "}
                     {property.priceRange.maxPrice}
                   </p>
-                  <button className="w-full py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md">
-                    Details
-                  </button>
+                  <Link to={`/propertyDetails/${property._id}`}>
+                    <button className="w-full py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+                      Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
