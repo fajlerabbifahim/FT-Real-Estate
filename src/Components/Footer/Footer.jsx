@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gray-900 text-white py-10 mt-20">
       <div className="container mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -103,7 +104,7 @@ const Footer = () => {
       <div className="mt-8 border-t border-gray-700 pt-6">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <p className="text-gray-400 text-sm text-center sm:text-left">
-            © 2025 FT Real Estate. All Rights Reserved.
+            © {currentYear} FT Real Estate. All Rights Reserved.
           </p>
         </div>
       </div>
