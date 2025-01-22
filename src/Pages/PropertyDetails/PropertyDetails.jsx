@@ -6,6 +6,7 @@ import Loader from "../../Components/Loader/Loader";
 import useAuth from "../../Hooks/useAuth";
 import Navbar from "../../Components/Navbar/Navbar";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Helmet } from "react-helmet-async";
 
 function PropertyDetails() {
   const { id } = useParams();
@@ -72,6 +73,9 @@ function PropertyDetails() {
 
   return (
     <div>
+      <Helmet>
+        <title>Property Details FT Real Estate</title>
+      </Helmet>
       <header>
         <Navbar />
       </header>

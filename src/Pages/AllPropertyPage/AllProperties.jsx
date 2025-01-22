@@ -6,6 +6,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import { IoLocationSharp } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 function AllProperties() {
   const [data, , isLoading] = useProperties();
@@ -14,6 +15,9 @@ function AllProperties() {
   }
   return (
     <>
+      <Helmet>
+        <title>All Properties | FT Real Estate</title>
+      </Helmet>
       <header>
         <Navbar />
       </header>
