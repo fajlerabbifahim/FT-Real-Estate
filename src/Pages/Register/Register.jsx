@@ -1,18 +1,30 @@
 import React, { useState } from "react";
-import { FaUser, FaEnvelope, FaLock, FaUsers } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import registerIMG from "../../assets/Login-Images/register.jpg";
 import Navbar from "../../Components/Navbar/Navbar";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import { MdPhoto } from "react-icons/md";
+import useImageUpload from "../../Hooks/useImageUpload";
 const Register = () => {
-  const { registerUser } = useAuth();
-  const { register, handleSubmit } = useForm();
+  const { registerUser, updateUser } = useAuth();
+  const { register, handleSubmit, setUser } = useForm();
   const navigate = useNavigate();
-  const handleRegister = (data) => {
-    console.log("register data ", data);
-    registerUser(data.email, data.password)
-      .then(() => {
+
+  // use image link from useImageUpload Hook, image upload imgBB
+  const { uploadImageToImgBB, loading, error, imageUrl } = useImageUpload();
+  const handleRegister = async (data) => {
+    // get data useing reactHookFrom
+    const { name, email, password, profilePicture } = data;
+    const uploadedImageUrl = await uploadImageToImgBB(profilePicture[0]);
+
+    registerUser(email, password)
+      .then((result) => {
+        updateUser({ displayName: name, photoURL: uploadedImageUrl }).then(
+          () => {}
+        );
+        setUser(result.user);
         alert("user create successful");
         navigate("/");
       })
@@ -31,12 +43,6 @@ const Register = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Section */}
               <div className="hidden md:flex flex-col justify-center items-center bg-[#F4F4F4] p-6">
-                {/* <h2 className="text-3xl font-semibold text-[#00509E] mb-4">
-              Create an account
-            </h2>
-            <p className="text-gray-600 text-center">
-              Join us to explore your dream property.
-            </p> */}
                 <img
                   src={registerIMG}
                   alt="Signup Illustration"
@@ -67,6 +73,26 @@ const Register = () => {
                     />
                   </div>
 
+                  {/* Upload Profile Picture */}
+                  <div className="flex items-center border rounded-lg px-3 py-2">
+                    <label
+                      htmlFor="profilePicture"
+                      className="flex items-center space-x-3 cursor-pointer"
+                    >
+                      <MdPhoto className="text-[#00509E]" />
+                      <span className="text-gray-500">
+                        Upload Profile Picture
+                      </span>
+                    </label>
+                    <input
+                      id="profilePicture"
+                      type="file"
+                      accept="image/*"
+                      {...register("profilePicture")}
+                      className="hidden"
+                    />
+                  </div>
+
                   {/* Email */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
                     <FaEnvelope className="text-[#00509E]" />
@@ -87,19 +113,6 @@ const Register = () => {
                       placeholder="Password"
                       className="flex-1 outline-none border-none pl-3"
                     />
-                  </div>
-
-                  {/* Select Role */}
-                  <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaUsers className="text-[#00509E]" />
-                    <select
-                      {...register("role")}
-                      className="flex-1 outline-none border-none pl-3 bg-transparent"
-                    >
-                      <option value="">Select Role</option>
-                      <option value="buyer">Buyer</option>
-                      <option value="seller">Seller</option>
-                    </select>
                   </div>
 
                   {/* Sign Up Button */}

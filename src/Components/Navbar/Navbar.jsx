@@ -49,6 +49,16 @@ const Navbar = () => {
       >
         About
       </NavLink>
+      <NavLink
+        to="/dashboard/myProfile"
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#FFC947] font-semibold"
+            : "hover:text-gray-300 transition duration-300"
+        }
+      >
+        Dashboard
+      </NavLink>
     </>
   );
 
