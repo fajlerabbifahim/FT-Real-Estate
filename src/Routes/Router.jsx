@@ -5,10 +5,12 @@ import Register from "../Pages/Register/Register";
 import Home from "../Pages/Home/Home/Home";
 import AllProperties from "../Pages/AllPropertyPage/AllProperties";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     element: <HomeLayout />,
     children: [{ path: "/", element: <Home /> }],
   },

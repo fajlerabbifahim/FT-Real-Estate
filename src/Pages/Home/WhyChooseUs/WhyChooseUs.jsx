@@ -44,9 +44,7 @@ const WhyChooseUs = () => {
                 {item.icon}
               </div>
               <h3 className="text-xl font-medium mb-2">{item.title}</h3>
-              <p className="text-gray-600 hover:text-white">
-                {item.description}
-              </p>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>

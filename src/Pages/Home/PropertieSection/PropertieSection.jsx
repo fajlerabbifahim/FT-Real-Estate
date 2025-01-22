@@ -3,6 +3,7 @@ import useProperties from "../../../Hooks/useProperties";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 import Loader from "../../../Components/Loader/Loader";
+import { Link } from "react-router-dom";
 
 function PropertieSection() {
   const [data, , isLoading] = useProperties();
@@ -55,9 +56,12 @@ function PropertieSection() {
                 >
                   Status: {property.verificationStatus}
                 </p>
-                <button className="px-4 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded">
-                  Details
-                </button>
+
+                <Link to={`/propertyDetails/${property._id}`}>
+                  <button className="px-4 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded">
+                    Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
