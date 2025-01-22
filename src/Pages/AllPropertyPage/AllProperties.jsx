@@ -4,6 +4,7 @@ import Loader from "../../Components/Loader/Loader";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Navbar from "../../Components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
 function AllProperties() {
   const [data, , isLoading] = useProperties();
@@ -73,7 +74,9 @@ function AllProperties() {
           </div>
         </div>
       </section>
-      <footer>footer</footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
