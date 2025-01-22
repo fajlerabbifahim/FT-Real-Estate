@@ -5,6 +5,7 @@ import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import Navbar from "../../Components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
+import { IoLocationSharp } from "react-icons/io5";
 
 function AllProperties() {
   const [data, , isLoading] = useProperties();
@@ -37,8 +38,8 @@ function AllProperties() {
                   <h3 className="text-lg font-semibold mb-2">
                     {property.propertyTitle}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-2">
-                    📍 {property.propertyLocation}
+                  <p className="text-sm text-gray-500 mb-2 flex items-center gap-1">
+                    <IoLocationSharp /> {property.propertyLocation}
                   </p>
                   <div className="flex items-center mb-2">
                     <img

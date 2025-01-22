@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaRegHeart, FaTimes } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
@@ -67,6 +67,17 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 items-center">
           {links}
+          {/* wish list button  */}
+          <div className="relative inline-block">
+            {/* Heart Icon */}
+            <p className="text-xl text-red-500">
+              <FaRegHeart />
+            </p>
+            {/* Static Count Badge */}
+            <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full px-2">
+              5
+            </span>
+          </div>
           {user?.email ? (
             <button
               onClick={() => logOut()}
@@ -84,7 +95,19 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+
+        <div className="md:hidden flex items-center gap-5 ">
+          {/* wish list button  */}
+          <div className="relative inline-block">
+            {/* Heart Icon */}
+            <p className="text-xl text-red-500">
+              <FaRegHeart />
+            </p>
+            {/* Static Count Badge */}
+            <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full px-2">
+              5
+            </span>
+          </div>
           <button onClick={toggleMenu} className="text-2xl focus:outline-none">
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>

@@ -4,6 +4,7 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 import Loader from "../../../Components/Loader/Loader";
 import { Link } from "react-router-dom";
+import { IoLocationSharp } from "react-icons/io5";
 
 function PropertieSection() {
   const [data, , isLoading] = useProperties();
@@ -36,7 +37,8 @@ function PropertieSection() {
               />
               {/* Card Content */}
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">
+                <h3 className="text-lg font-semibold mb-2 flex items-center gap-1">
+                  <IoLocationSharp />
                   {property.propertyLocation}
                 </h3>
 
