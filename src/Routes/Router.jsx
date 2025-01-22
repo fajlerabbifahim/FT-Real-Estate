@@ -6,6 +6,8 @@ import Home from "../Pages/Home/Home/Home";
 import AllProperties from "../Pages/AllPropertyPage/AllProperties";
 import PropertyDetails from "../Pages/PropertyDetails/PropertyDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import DashBoardLayout from "../Layouts/DashBoard/DashBoardLayout";
+import MyProfile from "../Pages/Dashboard/MyProfile/Myprofile";
 
 const Router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const Router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+
+  // dashboard section
+
+  {
+    path: "/dashboard",
+    element: <DashBoardLayout />,
+    children: [{ path: "myProfile", element: <MyProfile /> }],
   },
 ]);
 
