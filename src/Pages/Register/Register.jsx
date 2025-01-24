@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { MdPhoto } from "react-icons/md";
 import useImageUpload from "../../Hooks/useImageUpload";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import GoogleLogin from "../../Components/Social-Login/GoogleLogin/GoogleLogin";
 const Register = () => {
   const { registerUser, updateUser } = useAuth();
   const { register, handleSubmit } = useForm();
@@ -136,6 +137,10 @@ const Register = () => {
                   >
                     Sign Up
                   </button>
+
+                  {/* google signup  */}
+
+                  <GoogleLogin />
 
                   {/* Login Redirect */}
                   <p className="text-center text-gray-600">

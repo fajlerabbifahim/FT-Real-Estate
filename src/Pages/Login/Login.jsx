@@ -5,6 +5,7 @@ import loginImage from "../../assets/Login-Images/login.jpg";
 import Navbar from "../../Components/Navbar/Navbar";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import GoogleLogin from "../../Components/Social-Login/GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const { login } = useAuth();
@@ -84,6 +85,10 @@ const Login = () => {
                   >
                     Login
                   </button>
+
+                  {/* google signup  */}
+
+                  <GoogleLogin />
 
                   {/* Signup Redirect */}
                   <p className="text-center text-gray-600">
