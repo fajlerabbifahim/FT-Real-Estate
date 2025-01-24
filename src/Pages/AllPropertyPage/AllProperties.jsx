@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 function AllProperties() {
   const [data, , isLoading] = useProperties();
+
   if (isLoading) {
     return <Loader />;
   }
@@ -28,7 +29,7 @@ function AllProperties() {
             subTitle={"Find Your Dream House"}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {data.map((property) => (
+            {data?.map((property) => (
               <div
                 key={property._id}
                 className="bg-white rounded-lg shadow-md p-4 transition-transform duration-300 hover:scale-105"

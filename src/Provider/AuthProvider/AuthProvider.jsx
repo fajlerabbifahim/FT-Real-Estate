@@ -8,6 +8,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import Loader from "../../Components/Loader/Loader";
 
 export const AuthContext = createContext(null);
 function AuthProvider({ children }) {
@@ -68,7 +69,9 @@ function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      {loading ? <Loader /> : children}
+    </AuthContext.Provider>
   );
 }
 

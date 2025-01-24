@@ -1,15 +1,25 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import {
-  FaBars,
   FaHome,
   FaUser,
   FaHeart,
   FaShoppingBag,
   FaStar,
+  FaUserShield,
+  FaPlusCircle,
+  FaListAlt,
+  FaDollarSign,
+  FaEnvelope,
+  FaCogs,
+  FaUsers,
+  FaBars,
 } from "react-icons/fa";
+import useAuth from "../../Hooks/useAuth";
 
 const DashBoardLayout = () => {
+  const { user } = useAuth();
+  const email = user?.email;
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -33,49 +43,187 @@ const DashBoardLayout = () => {
         <nav>
           <ul className="space-y-4">
             <li>
-              <Link
+              <NavLink
                 to="/"
-                className="flex items-center space-x-3 px-4 py-2 rounded hover:bg-blue-500"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
               >
                 <FaHome size={20} />
                 <span>Home</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="myProfile"
-                className="flex items-center space-x-3 px-4 py-2 rounded hover:bg-blue-500"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
               >
                 <FaUser size={20} />
                 <span>My Profile</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/wishlist"
-                className="flex items-center space-x-3 px-4 py-2 rounded hover:bg-blue-500"
+              <NavLink
+                to={`/dashboard/wishlist/${email}`}
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
               >
                 <FaHeart size={20} />
                 <span>Wishlist</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/property-bought"
-                className="flex items-center space-x-3 px-4 py-2 rounded hover:bg-blue-500"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
               >
                 <FaShoppingBag size={20} />
                 <span>Property Bought</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/reviews"
-                className="flex items-center space-x-3 px-4 py-2 rounded hover:bg-blue-500"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
               >
                 <FaStar size={20} />
                 <span>My Reviews</span>
-              </Link>
+              </NavLink>
+            </li>
+            {/* Additional Links */}
+            <li>
+              <NavLink
+                to="/agent-profile"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaUserShield size={20} />
+                <span>Agent Profile</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/add-property"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaPlusCircle size={20} />
+                <span>Add Property</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-added-properties"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaListAlt size={20} />
+                <span>My Added Properties</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my-sold-properties"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaDollarSign size={20} />
+                <span>My Sold Properties</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/requested-properties"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaEnvelope size={20} />
+                <span>Requested Properties</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/admin-profile"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaUserShield size={20} />
+                <span>Admin Profile</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/manage-properties"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaCogs size={20} />
+                <span>Manage Properties</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/manage-users"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaUsers size={20} />
+                <span>Manage Users</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/manage-reviews"
+                className={({ isActive }) =>
+                  `flex items-center space-x-3 px-4 py-2 rounded ${
+                    isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
+                  }`
+                }
+              >
+                <FaStar size={20} />
+                <span>Manage Reviews</span>
+              </NavLink>
             </li>
           </ul>
         </nav>

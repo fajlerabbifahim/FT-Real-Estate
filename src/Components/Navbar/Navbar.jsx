@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegHeart, FaTimes } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
+import useWistList from "../../Hooks/useWistList";
+import Loader from "../Loader/Loader";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logOut } = useAuth();
-  // Dynamic Links as JSX Variable
+  const [wishlist, isError, refetch] = useWistList();
+  console.log("wishlist navbar data", wishlist);
+
+  if (isError) {
+    return <Loader />;
+  }
+
+  // nav links here
   const links = (
     <>
       <NavLink
@@ -85,7 +94,7 @@ const Navbar = () => {
             </p>
             {/* Static Count Badge */}
             <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full px-2">
-              5
+              {wishlist?.length}
             </span>
           </div>
           {user?.email ? (
@@ -115,7 +124,7 @@ const Navbar = () => {
             </p>
             {/* Static Count Badge */}
             <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full px-2">
-              5
+              {wishlist?.length}
             </span>
           </div>
           <button onClick={toggleMenu} className="text-2xl focus:outline-none">

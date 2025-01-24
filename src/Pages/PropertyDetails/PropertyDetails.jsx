@@ -7,6 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 import Navbar from "../../Components/Navbar/Navbar";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Helmet } from "react-helmet-async";
+import useWishList from "../../Hooks/useWistList";
 
 function PropertyDetails() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ function PropertyDetails() {
   const [showModal, setShowModal] = useState(false);
   const [reviewText, setReviewText] = useState("");
   const { user } = useAuth();
+  const [, , refetch] = useWishList();
   //   fetch property with id
   const { data: property, isLoading } = useQuery({
     queryKey: ["property", id],
@@ -24,7 +26,7 @@ function PropertyDetails() {
   });
 
   // get review
-  const { data: reviews, refetch } = useQuery({
+  const { data: reviews, refetch: refetchReview } = useQuery({
     queryKey: ["reviews", id],
     queryFn: async () => {
       const res = await axiosSecure.get(`/reviews?propertyId=${id}`);
@@ -32,16 +34,21 @@ function PropertyDetails() {
     },
   });
 
-  //   wishlist
+  //wishlist
+
   const wistListData = {
     ...property,
     addWishList: user?.email,
   };
+
+  delete wistListData._id; // delete wishlist data
+
   const handleAddToWishlist = async () => {
     try {
-      const response = await axiosSecure.post("/wishlist", wistListData); // Passing wistListData
-      console.log("Wishlist updated:", response.data);
+      const res = await axiosSecure.post("/wishlist", wistListData);
+      console.log("Wishlist updated:", res.data);
       alert("added to wishlist");
+      refetch();
     } catch (error) {
       console.error("Error adding to wishlist:", error);
     }
@@ -64,7 +71,7 @@ function PropertyDetails() {
     });
     setReviewText("");
     setShowModal(false);
-    refetch();
+    refetchReview();
   };
 
   if (isLoading) {
