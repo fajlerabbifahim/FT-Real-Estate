@@ -7,9 +7,11 @@ import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { MdPhoto } from "react-icons/md";
 import useImageUpload from "../../Hooks/useImageUpload";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Register = () => {
   const { registerUser, updateUser } = useAuth();
-  const { register, handleSubmit, setUser } = useForm();
+  const { register, handleSubmit } = useForm();
+  const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
 
   // use image link from useImageUpload Hook, image upload imgBB
@@ -18,15 +20,27 @@ const Register = () => {
     // get data useing reactHookFrom
     const { name, email, password, profilePicture } = data;
     const uploadedImageUrl = await uploadImageToImgBB(profilePicture[0]);
+    //create a object and save to database userCollection
+    const newUser = {
+      name: name,
+      email: email,
+      photo: uploadedImageUrl,
+    };
+
+    console.log("user object for save database", newUser);
 
     registerUser(email, password)
       .then((result) => {
         updateUser({ displayName: name, photoURL: uploadedImageUrl }).then(
-          () => {}
+          () => {
+            axiosPublic.post("/user", newUser).then((res) => {
+              if (res.data.insertedId) {
+                alert("user create successful");
+                navigate("/");
+              }
+            });
+          }
         );
-        setUser(result.user);
-        alert("user create successful");
-        navigate("/");
       })
       .catch((e) => {
         console.log("error message", e.message);

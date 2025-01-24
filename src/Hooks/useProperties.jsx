@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 
-import useAxiosSecure from "./useAxiosSecure";
+import useAxiosPublic from "./useAxiosPublic";
 
 function useProperties() {
-  const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
   const { data, refetch, isLoading } = useQuery({
     queryKey: ["properties"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/properties");
-      console.log("api response data", res.data);
+      const res = await axiosPublic.get("/properties");
+      console.log("api response data ha ha pubic", res.data);
       return res.data;
     },
   });
