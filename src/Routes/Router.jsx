@@ -9,6 +9,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import DashBoardLayout from "../Layouts/DashBoard/DashBoardLayout";
 import MyProfile from "../Pages/Dashboard/MyProfile/Myprofile";
 import WishList from "../Pages/Dashboard/WishList/WishList";
+import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
 
 const Router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ const Router = createBrowserRouter([
     children: [
       { path: "myProfile", element: <MyProfile /> },
       { path: "wishlist/:email", element: <WishList /> },
+      { path: "makeOffer", element: <MakeOffer /> },
     ],
   },
 ]);
