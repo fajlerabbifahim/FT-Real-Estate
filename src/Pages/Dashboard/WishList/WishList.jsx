@@ -3,12 +3,12 @@ import useWishList from "../../../Hooks/useWistList";
 import Loader from "../../../Components/Loader/Loader";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const WishList = () => {
   const [wishlist, isLoading, refetch] = useWishList();
   const axiosSecure = useAxiosSecure();
-  const navigate = useNavigate();
+
   if (isLoading) {
     return <Loader />;
   }
@@ -78,7 +78,7 @@ const WishList = () => {
               </div>
             </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to={"/dashboard/makeOffer"}>
+              <Link to={`/dashboard/makeOffer/${property._id}`}>
                 <button className="bg-blue-600 text-white py-2 px-4 rounded-md">
                   Make an Offer
                 </button>

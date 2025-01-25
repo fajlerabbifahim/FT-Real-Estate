@@ -43,7 +43,7 @@ const Router = createBrowserRouter([
     children: [
       { path: "myProfile", element: <MyProfile /> },
       { path: "wishlist/:email", element: <WishList /> },
-      { path: "makeOffer", element: <MakeOffer /> },
+      { path: "makeOffer/:id", element: <MakeOffer /> },
     ],
   },
 ]);

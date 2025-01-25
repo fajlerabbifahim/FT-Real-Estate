@@ -60,6 +60,7 @@ function AuthProvider({ children }) {
   const authInfo = {
     user,
     loading,
+    setLoading,
     registerUser,
     signinWithGoogle,
     login,
