@@ -5,6 +5,7 @@ import Loader from "../../../Components/Loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 import moment from "moment";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const MakeOffer = () => {
   const axiosSecure = useAxiosSecure();
@@ -25,9 +26,20 @@ const MakeOffer = () => {
   });
 
   // save offer to database
-
   const handleMakeOffer = (data) => {
     console.log("offered data ", data);
+
+    axiosSecure.post("/makeOffer", data).then((res) => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Offer Request Send",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
   };
 
   // if loading show loading spinner
