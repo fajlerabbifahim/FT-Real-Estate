@@ -26,6 +26,7 @@ const Register = () => {
       name: name,
       email: email,
       photo: uploadedImageUrl,
+      role: "User",
     };
 
     console.log("user object for save database", newUser);

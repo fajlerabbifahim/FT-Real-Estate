@@ -5,7 +5,7 @@ import useAuth from "./useAuth";
 const useWishList = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = useAuth();
-  const email = user.email;
+  const email = user?.email;
 
   const {
     data: wishlist,

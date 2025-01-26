@@ -19,6 +19,7 @@ const GoogleLogin = () => {
       name: user.displayName,
       email: user.email,
       photo: user.photoURL,
+      role: "User",
     };
 
     axiosPublic.post("/user", newUser).then((res) => {

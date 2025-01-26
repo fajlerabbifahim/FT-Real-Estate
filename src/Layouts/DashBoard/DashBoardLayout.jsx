@@ -107,7 +107,7 @@ const DashBoardLayout = () => {
                 <span>My Reviews</span>
               </NavLink>
             </li>
-            {/* Additional Links */}
+            {/* Additional agent Links */}
             <li>
               <NavLink
                 to="/agent-profile"
@@ -173,6 +173,9 @@ const DashBoardLayout = () => {
                 <span>Requested Properties</span>
               </NavLink>
             </li>
+
+            {/* admin additional links  */}
+
             <li>
               <NavLink
                 to="/admin-profile"
@@ -201,7 +204,7 @@ const DashBoardLayout = () => {
             </li>
             <li>
               <NavLink
-                to="/manage-users"
+                to="/dashboard/users"
                 className={({ isActive }) =>
                   `flex items-center space-x-3 px-4 py-2 rounded ${
                     isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
