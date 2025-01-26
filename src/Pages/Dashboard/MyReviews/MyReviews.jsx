@@ -2,13 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Loader from "../../../Components/Loader/Loader";
 import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const { user } = useAuth(); // Get logged-in user info
   const axiosSecure = useAxiosSecure();
   // Fetch reviews for the logged-in user
 
-  const { data: reviews, isLoading } = useQuery({
+  const {
+    data: reviews,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["reviews", user.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/reviews/${user?.email}`);
@@ -17,7 +22,33 @@ const MyReviews = () => {
   });
 
   // Handle delete review
-  const handleDelete = async (id) => {};
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("delete clicked", id);
+
+        axiosSecure.delete(`/reviews/${id}`).then((res) => {
+          console.log("delete response", res.data);
+          refetch();
+
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        });
+      }
+    });
+  };
 
   if (isLoading) return <Loader />;
 
