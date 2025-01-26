@@ -1,9 +1,8 @@
-import useUser from "../../../Hooks/useUser";
-import Loader from "../../../Components/Loader/Loader";
+import Loader from "../../../../Components/Loader/Loader";
+import useUser from "../../../../Hooks/useUser";
 
-const MyProfile = () => {
+const AgentProfile = () => {
   const [userData, isLoading] = useUser();
-
   if (isLoading) return <Loader />;
   return (
     <div className="max-w-md mx-auto mt-10 bg-gray-50 shadow-lg rounded-xl overflow-hidden border border-gray-200">
@@ -35,4 +34,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default AgentProfile;

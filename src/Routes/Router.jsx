@@ -13,6 +13,8 @@ import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
 import PropertyBought from "../Pages/Dashboard/PropertyBought/PropertyBought";
 import MyReviews from "../Pages/Dashboard/MyReviews/MyReviews";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
+import AgentProfile from "../Pages/Dashboard/Agent/AgentProfile/AgentProfile";
+import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
 
 const Router = createBrowserRouter([
   {
@@ -52,7 +54,12 @@ const Router = createBrowserRouter([
       { path: "propertyBought/:email", element: <PropertyBought /> },
       { path: "reviews/:email", element: <MyReviews /> },
 
+      //agent route
+
+      { path: "agentProfile", element: <AgentProfile /> },
+
       //admin route
+      { path: "adminProfile", element: <AdminProfile /> },
       { path: "users", element: <ManageUser /> },
     ],
   },

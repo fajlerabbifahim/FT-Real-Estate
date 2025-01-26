@@ -110,7 +110,7 @@ const DashBoardLayout = () => {
             {/* Additional agent Links */}
             <li>
               <NavLink
-                to="/agent-profile"
+                to="/dashboard/agentProfile"
                 className={({ isActive }) =>
                   `flex items-center space-x-3 px-4 py-2 rounded ${
                     isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
@@ -178,7 +178,7 @@ const DashBoardLayout = () => {
 
             <li>
               <NavLink
-                to="/admin-profile"
+                to="/dashboard/adminProfile"
                 className={({ isActive }) =>
                   `flex items-center space-x-3 px-4 py-2 rounded ${
                     isActive ? "bg-blue-500 text-white" : "hover:bg-blue-500"
