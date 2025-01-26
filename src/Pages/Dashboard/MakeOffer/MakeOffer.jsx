@@ -148,6 +148,11 @@ const MakeOffer = () => {
         />
         <input
           type="hidden"
+          {...register("propertyImage")}
+          value={property.propertyImage}
+        />
+        <input
+          type="hidden"
           {...register("offeredTime")}
           value={moment().format("YYYY-MM-DD HH:mm:ss")}
         />
