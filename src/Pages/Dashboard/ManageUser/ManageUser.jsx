@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { FaTrash, FaUserCog } from "react-icons/fa";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Loader from "../../../Components/Loader/Loader";
+import Swal from "sweetalert2";
 
 const ManageUser = () => {
   const axiosSecure = useAxiosSecure();
@@ -18,7 +19,46 @@ const ManageUser = () => {
     },
   });
 
-  const deleteUser = (id) => {};
+  //delete a user
+  const deleteUser = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/user/${id}`).then((res) => {
+          refetch();
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        });
+      }
+    });
+  };
+
+  //handle role change a user
+
+  const handleRoleChange = (id, role) => {
+    axiosSecure.put(`/user/${id}`, { role }).then((res) => {
+      if (res.data.acknowledged) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `Role is changed to ${role}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        refetch();
+      }
+    });
+  };
 
   if (isLoading) return <Loader />;
 
@@ -84,9 +124,16 @@ const ManageUser = () => {
                     </li>
                     <li>
                       <button
-                        onClick={() => handleRoleChange(user.id, "Agent")}
+                        onClick={() => handleRoleChange(user._id, "Agent")}
                       >
                         Make Agent
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => handleRoleChange(user._id, "User")}
+                      >
+                        Make User
                       </button>
                     </li>
                   </ul>
