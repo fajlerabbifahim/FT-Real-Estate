@@ -63,11 +63,13 @@ function PropertyDetails() {
     }
 
     await axiosSecure.post("/reviews", {
+      propertyTitle: property.propertyTitle,
       propertyId: id,
       text: reviewText,
-      reviewerName: user?.displayName,
+      agentName: property.agentName,
+      reviewerEmail: user?.email,
       reviewerImage: user?.photoURL,
-      data: new Date().toDateString(),
+      date: new Date().toDateString(),
     });
     setReviewText("");
     setShowModal(false);

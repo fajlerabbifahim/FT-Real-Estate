@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
+import Loader from "../../../Components/Loader/Loader";
 
 const PropertyBought = () => {
   const axiosSecure = useAxiosSecure();
@@ -15,6 +16,8 @@ const PropertyBought = () => {
       return res.data;
     },
   });
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className="container mx-auto px-4 py-8">
