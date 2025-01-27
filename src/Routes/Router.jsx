@@ -15,6 +15,7 @@ import MyReviews from "../Pages/Dashboard/MyReviews/MyReviews";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import AgentProfile from "../Pages/Dashboard/Agent/AgentProfile/AgentProfile";
 import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
+import AddProperty from "../Pages/Dashboard/Agent/AddProperty/AddProperty";
 
 const Router = createBrowserRouter([
   {
@@ -57,6 +58,7 @@ const Router = createBrowserRouter([
       //agent route
 
       { path: "agentProfile", element: <AgentProfile /> },
+      { path: "addProperty", element: <AddProperty /> },
 
       //admin route
       { path: "adminProfile", element: <AdminProfile /> },
