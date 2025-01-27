@@ -18,6 +18,7 @@ import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile/AdminProfile";
 import AddProperty from "../Pages/Dashboard/Agent/AddProperty/AddProperty";
 import MyAddedProperty from "../Pages/Dashboard/Agent/MyAddedProperty/MyAddedProperty";
 import ManageProperty from "../Pages/Dashboard/Admin/ManageProperty/ManageProperty";
+import ManageReview from "../Pages/Dashboard/Admin/ManageReview/ManageReview";
 
 const Router = createBrowserRouter([
   {
@@ -67,6 +68,7 @@ const Router = createBrowserRouter([
       { path: "adminProfile", element: <AdminProfile /> },
       { path: "users", element: <ManageUser /> },
       { path: "allProperties", element: <ManageProperty /> },
+      { path: "manageReview", element: <ManageReview /> },
     ],
   },
 ]);
