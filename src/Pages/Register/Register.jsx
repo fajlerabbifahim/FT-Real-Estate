@@ -29,15 +29,12 @@ const Register = () => {
       role: "User",
     };
 
-    console.log("user object for save database", newUser);
-
     registerUser(email, password)
       .then((result) => {
         updateUser({ displayName: name, photoURL: uploadedImageUrl }).then(
           () => {
             axiosPublic.post("/user", newUser).then((res) => {
               if (res.data.insertedId) {
-                alert("user create successful");
                 navigate("/");
               }
             });

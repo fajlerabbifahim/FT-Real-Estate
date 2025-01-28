@@ -24,7 +24,6 @@ const GoogleLogin = () => {
 
     axiosPublic.post("/user", newUser).then((res) => {
       if (res.data.insertedId) {
-        alert("user create successful");
       }
     });
     navigate("/");

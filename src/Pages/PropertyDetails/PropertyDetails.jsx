@@ -8,6 +8,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Helmet } from "react-helmet-async";
 import useWishList from "../../Hooks/useWistList";
+import Swal from "sweetalert2";
 
 function PropertyDetails() {
   const { id } = useParams();
@@ -46,8 +47,13 @@ function PropertyDetails() {
   const handleAddToWishlist = async () => {
     try {
       const res = await axiosSecure.post("/wishlist", wistListData);
-      console.log("Wishlist updated:", res.data);
-      alert("added to wishlist");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Property Added To Wishlist",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       refetch();
     } catch (error) {
       console.error("Error adding to wishlist:", error);
@@ -58,7 +64,10 @@ function PropertyDetails() {
 
   const handleAddReview = async () => {
     if (!reviewText.trim()) {
-      alert("review text cannot be empty");
+      Swal.fire({
+        title: "Comment cannot be empty.",
+        icon: "error",
+      });
       return;
     }
 

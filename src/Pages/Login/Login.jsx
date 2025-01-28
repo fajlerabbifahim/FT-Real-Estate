@@ -15,7 +15,6 @@ const Login = () => {
     console.log("login data", data);
     login(data.email, data.password)
       .then(() => {
-        alert("login successfully");
         navigate("/");
       })
       .catch((e) => {
