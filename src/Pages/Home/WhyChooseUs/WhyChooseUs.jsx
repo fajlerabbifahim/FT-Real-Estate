@@ -8,19 +8,19 @@ const WhyChooseUs = () => {
     {
       title: "Trusted By Thousands",
       description:
-        "Aliquam dictum elit vitae mauris facilisis at dictum vitae urna dignissim donec vel lectus vel felis.",
+        "To provide exceptional real estate services and help our clients make informed decisions about their investments.",
       icon: <FaHandshake />, // Replace with an SVG or image if needed
     },
     {
       title: "Wide Range Of Properties",
       description:
-        "Aliquam dictum elit vitae mauris facilisis at dictum vitae urna dignissim donec vel lectus vel felis.",
+        " We offer personalized services, expert advice, and a wide range of properties to suit every budget and preference.",
       icon: <MdMapsHomeWork />, // Replace with an SVG or image if needed
     },
     {
       title: "Financing Made Easy",
       description:
-        "Aliquam dictum elit vitae mauris facilisis at dictum vitae urna dignissim donec vel lectus vel felis.",
+        " We offer personalized services, expert advice, and a wide range of properties to suit every budget and preference.",
       icon: <GiMoneyStack />, // Replace with an SVG or image if needed
     },
   ];
