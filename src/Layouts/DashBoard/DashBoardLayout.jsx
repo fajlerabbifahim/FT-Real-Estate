@@ -209,7 +209,7 @@ const DashBoardLayout = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/requested-properties"
+                    to="/dashboard/requestedProperty"
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive

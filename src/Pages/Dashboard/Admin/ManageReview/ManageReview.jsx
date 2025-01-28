@@ -2,6 +2,7 @@ import { FaTrash } from "react-icons/fa";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../../Components/Loader/Loader";
+import Swal from "sweetalert2";
 const ManageReview = () => {
   const axiosSecure = useAxiosSecure();
 
@@ -18,11 +19,29 @@ const ManageReview = () => {
   });
 
   const handleDelete = (id) => {
-    axiosSecure.delete(`/reviews/${id}`).then((res) => {
-      console.log(res.data);
-      refetch();
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/reviews/${id}`).then((res) => {
+          console.log(res.data);
+          if (res.data) {
+          }
+          refetch();
+        });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
     });
-    console.log("Delete button clicked!");
   };
 
   if (isLoading) return <Loader />;
@@ -33,7 +52,10 @@ const ManageReview = () => {
         {/* Review Card 1 */}
 
         {reviews.map((review) => (
-          <div className="bg-white shadow-md border border-gray-300 rounded-lg p-4">
+          <div
+            key={review._id}
+            className="bg-white shadow-md border border-gray-300 rounded-lg p-4"
+          >
             <h3 className="text-lg font-semibold"> {review.propertyTitle} </h3>
             <p className="text-sm text-gray-600">Agent: {review.agentName} </p>
             <p className="text-sm text-gray-600">Time: {review.date}</p>

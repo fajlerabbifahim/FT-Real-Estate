@@ -47,8 +47,16 @@ const MyAddedProperty = () => {
               Price Range: {property.priceRange.minPrice} -{" "}
               {property.priceRange.maxPrice}
             </p>
-            <span className="text-xs px-2 py-1 rounded-full bg-red-100 text-red-600">
-              Pending
+            <span
+              className={`text-xs px-2 py-1 rounded-full ${
+                property.verificationStatus === "verified"
+                  ? "bg-green-100 text-green-600"
+                  : "bg-red-100 text-red-600"
+              }`}
+            >
+              {property.verificationStatus === "verified"
+                ? "Verified"
+                : "Pending"}
             </span>
           </div>
 

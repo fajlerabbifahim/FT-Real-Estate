@@ -34,10 +34,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("delete clicked", id);
-
         axiosSecure.delete(`/reviews/${id}`).then((res) => {
-          console.log("delete response", res.data);
           refetch();
 
           Swal.fire({
