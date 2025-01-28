@@ -1,5 +1,6 @@
 import React from "react";
 import bannerIMG from "../../../assets/BannerIMG/bannerImage.jpg";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -19,9 +20,11 @@ function Banner() {
           Discover luxurious homes, apartments, and offices that match your
           lifestyle.
         </p>
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-          Explore Now
-        </button>
+        <Link to="/allProperties">
+          <button className="px-6 py-3 bg-[#FF5A5F] hover:bg-[#f56b70] text-white rounded-lg">
+            Explore Now
+          </button>
+        </Link>
       </div>
     </div>
   );

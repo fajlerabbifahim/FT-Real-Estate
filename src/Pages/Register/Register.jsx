@@ -69,7 +69,7 @@ const Register = () => {
               {/* Right Section */}
               <div className="p-8">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-2xl font-bold text-[#00509E]">
+                  <h2 className="text-2xl font-bold text-[#333333]">
                     Register
                   </h2>
                 </div>
@@ -80,7 +80,7 @@ const Register = () => {
                 >
                   {/* User Name */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaUser className="text-[#00509E]" />
+                    <FaUser className="text-[#333333]" />
                     <input
                       type="text"
                       {...register("name")}
@@ -95,7 +95,7 @@ const Register = () => {
                       htmlFor="profilePicture"
                       className="flex items-center space-x-3 cursor-pointer"
                     >
-                      <MdPhoto className="text-[#00509E]" />
+                      <MdPhoto className="text-[#333333]" />
                       <span className="text-gray-500">
                         Upload Profile Picture
                       </span>
@@ -111,7 +111,7 @@ const Register = () => {
 
                   {/* Email */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaEnvelope className="text-[#00509E]" />
+                    <FaEnvelope className="text-[#333333]" />
                     <input
                       type="email"
                       {...register("email")}
@@ -122,7 +122,7 @@ const Register = () => {
 
                   {/* Password */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaLock className="text-[#00509E]" />
+                    <FaLock className="text-[#333333]" />
                     <input
                       type="password"
                       {...register("password")}
@@ -134,7 +134,7 @@ const Register = () => {
                   {/* Sign Up Button */}
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#FFC947] text-white rounded-lg text-lg font-semibold hover:bg-[#FFD365] transition duration-300"
+                    className="w-full py-3 bg-[#FF5A5F] text-white rounded-lg text-lg font-semibold hover:bg-[#ec696d] transition duration-300"
                   >
                     Sign Up
                   </button>
@@ -148,7 +148,7 @@ const Register = () => {
                     Already have an account?{" "}
                     <Link
                       to="/login"
-                      className="text-[#00509E] font-bold hover:underline"
+                      className="text-[#FF5A5F] font-bold hover:underline"
                     >
                       Login
                     </Link>

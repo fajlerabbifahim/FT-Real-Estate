@@ -179,7 +179,7 @@ function PropertyDetails() {
             <p className="text-gray-600 mb-6">{property.description}</p>
             <button
               onClick={handleAddToWishlist}
-              className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
+              className="flex items-center justify-center hover:duration-700 text-[#FF5A5F] hover:bg-[#FF5A5F]  border border-[#FF5A5F] hover:text-white py-2 px-4 rounded-md"
             >
               <AiOutlineHeart className="mr-2" />
               Add to Wishlist
@@ -207,7 +207,7 @@ function PropertyDetails() {
             )}
             <button
               onClick={() => setShowModal(true)}
-              className="mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md"
+              className="mt-4 hover:duration-700 text-[#FF5A5F] hover:bg-[#FF5A5F]  border border-[#FF5A5F] hover:text-white py-2 px-4 rounded-md"
             >
               Add a Review
             </button>
@@ -234,7 +234,7 @@ function PropertyDetails() {
                   </button>
                   <button
                     onClick={handleAddReview}
-                    className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md"
+                    className="bg-[#FF5A5F] hover:bg-[#f56b70] text-white py-2 px-4 rounded-md"
                   >
                     Submit
                   </button>

@@ -100,14 +100,14 @@ const ManageUser = () => {
               <td className="flex gap-2">
                 <button
                   onClick={() => deleteUser(user._id)}
-                  className="btn btn-error btn-xs flex items-center gap-1"
+                  className="btn btn-error  btn-xs flex items-center gap-1"
                 >
                   <FaTrash /> Delete
                 </button>
                 <div className="dropdown dropdown-hover">
                   <label
                     tabIndex={0}
-                    className="btn btn-xs btn-info flex items-center gap-1"
+                    className="btn btn-xs btn-info bg-[#333333]  border-none hover:bg-[#333333] text-white  flex items-center gap-1"
                   >
                     <FaUserCog /> Role
                   </label>

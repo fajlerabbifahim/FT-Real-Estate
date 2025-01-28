@@ -16,7 +16,7 @@ function ErrorPage() {
           <div className="mt-6">
             <Link
               to="/"
-              className="bg-[#FF5722] text-white hover:bg-[#E64A19] px-6 py-2 rounded-sm shadow-md font-semibold"
+              className="bg-[#FF5A5F] text-white hover:bg-[#f17676] px-6 py-2 rounded-sm shadow-md font-semibold"
             >
               Back to home
             </Link>

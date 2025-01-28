@@ -159,7 +159,7 @@ const MakeOffer = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+          className="w-full hover:duration-700 text-[#FF5A5F] hover:bg-[#FF5A5F]  border border-[#FF5A5F] hover:text-white py-2 px-4 rounded-md "
         >
           Submit Offer
         </button>

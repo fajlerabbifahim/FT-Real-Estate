@@ -70,7 +70,7 @@ function AllProperties() {
                     {property.priceRange.maxPrice}
                   </p>
                   <Link to={`/propertyDetails/${property._id}`}>
-                    <button className="w-full py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+                    <button className="w-full py-2 hover:duration-700 text-[#FF5A5F] hover:bg-[#FF5A5F]  border border-[#FF5A5F] hover:text-white rounded-md">
                       Details
                     </button>
                   </Link>

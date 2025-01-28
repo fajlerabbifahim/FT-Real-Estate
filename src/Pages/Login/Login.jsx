@@ -33,12 +33,6 @@ const Login = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Section */}
               <div className="hidden md:flex flex-col justify-center items-center bg-[#F4F4F4] p-6">
-                {/* <h2 className="text-3xl font-semibold text-[#00509E] mb-4">
-              Welcome Back
-            </h2>
-            <p className="text-gray-600 text-center">
-              Log in to access your account and explore your dream property.
-            </p> */}
                 <img
                   src={loginImage}
                   alt="Login Illustration"
@@ -49,7 +43,7 @@ const Login = () => {
               {/* Right Section */}
               <div className="p-8">
                 <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-2xl font-bold text-[#00509E]">Login</h2>
+                  <h2 className="text-2xl font-bold text-[#333333]">Login</h2>
                 </div>
 
                 <form
@@ -58,7 +52,7 @@ const Login = () => {
                 >
                   {/* Email */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaEnvelope className="text-[#00509E]" />
+                    <FaEnvelope className="text-[#333333]" />
                     <input
                       type="email"
                       {...register("email")}
@@ -69,7 +63,7 @@ const Login = () => {
 
                   {/* Password */}
                   <div className="flex items-center border rounded-lg px-3 py-2">
-                    <FaLock className="text-[#00509E]" />
+                    <FaLock className="text-[#333333]" />
                     <input
                       type="password"
                       {...register("password")}
@@ -81,7 +75,7 @@ const Login = () => {
                   {/* Login Button */}
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#FFC947] text-white rounded-lg text-lg font-semibold hover:bg-[#FFD365] transition duration-300"
+                    className="w-full py-3 bg-[#FF5A5F] text-white rounded-lg text-lg font-semibold hover:bg-[#f16d72] transition duration-300"
                   >
                     Login
                   </button>
@@ -95,7 +89,7 @@ const Login = () => {
                     Don't have an account?{" "}
                     <Link
                       to="/register"
-                      className="text-[#00509E] font-bold hover:underline"
+                      className="text-[#FF5A5F] font-bold hover:underline"
                     >
                       Sign Up
                     </Link>

@@ -43,7 +43,7 @@ const MyAddedProperty = () => {
               Modern Duplex Apartment
             </h3>
             <p className="text-sm text-gray-500">{property.propertyLocation}</p>
-            <p className="text-indigo-600 mb-1">
+            <p className="text-[#FF5A5F] mb-1">
               Price Range: {property.priceRange.minPrice} -{" "}
               {property.priceRange.maxPrice}
             </p>
@@ -62,7 +62,7 @@ const MyAddedProperty = () => {
 
           {/* Buttons */}
           <div className="flex space-x-2">
-            <button className="flex items-center space-x-1 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+            <button className="flex items-center space-x-1 px-3 py-2 bg-[#FF5A5F] text-white rounded-lg hover:bg-[#e76b6f]">
               <FaEdit />
               <span>Update</span>
             </button>

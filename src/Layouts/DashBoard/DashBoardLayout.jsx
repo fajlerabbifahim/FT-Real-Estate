@@ -28,7 +28,7 @@ const DashBoardLayout = () => {
     <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static top-0 left-0 h-full lg:h-auto w-64 bg-blue-600 text-white p-5 transform ${
+        className={`fixed lg:static top-0 left-0 h-full lg:h-auto max-w-80 bg-[#FF5A5F] text-white p-5 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 lg:translate-x-0 z-50`}
       >
@@ -53,8 +53,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -68,8 +68,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -83,8 +83,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -98,8 +98,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -113,8 +113,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -138,8 +138,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -153,8 +153,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -168,8 +168,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -183,8 +183,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -198,8 +198,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -213,8 +213,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -238,8 +238,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -253,8 +253,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -268,8 +268,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -283,8 +283,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -298,8 +298,8 @@ const DashBoardLayout = () => {
                     className={({ isActive }) =>
                       `flex items-center space-x-3 px-4 py-2 rounded ${
                         isActive
-                          ? "bg-blue-500 text-white"
-                          : "hover:bg-blue-500"
+                          ? "bg-[#333333] text-white"
+                          : "hover:bg-[#4d4d4b]"
                       }`
                     }
                   >
@@ -317,7 +317,7 @@ const DashBoardLayout = () => {
 
       {/* Hamburger Button for Mobile */}
       <button
-        className="lg:hidden fixed top-5 left-5 z-50 bg-blue-600 text-white p-2 rounded shadow-lg"
+        className="lg:hidden fixed top-5 left-5 z-50 bg-[#FF5A5F] text-white p-2 rounded shadow-lg"
         onClick={() => setSidebarOpen(!isSidebarOpen)}
       >
         <FaBars size={20} />

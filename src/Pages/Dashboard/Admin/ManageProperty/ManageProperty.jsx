@@ -70,10 +70,10 @@ const ManageProperty = () => {
                 {property.verificationStatus}
               </td>
               <td className="px-4 py-3 border-b">
-                <div className="dropdown dropdown-hover">
+                <div className="dropdown dropdown-left dropdown-hover">
                   <label
                     tabIndex={0}
-                    className="btn btn-xs btn-info flex items-center gap-1"
+                    className="btn btn-xs btn-info bg-[#FF5A5F] border-none hover:bg-[#FF5A5F] flex items-center gap-1"
                   >
                     <FaEllipsisV />
                   </label>

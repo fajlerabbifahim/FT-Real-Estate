@@ -24,22 +24,22 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-blue-400">
+              <a href="#" className="hover:text-[#FF5A5F]">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-400">
+              <a href="#" className="hover:text-[#FF5A5F]">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-400">
+              <a href="#" className="hover:text-[#FF5A5F]">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-400">
+              <a href="#" className="hover:text-[#FF5A5F]">
                 Contact
               </a>
             </li>
@@ -54,28 +54,28 @@ const Footer = () => {
             Email:{" "}
             <a
               href="mailto:info@ftrealestate.com"
-              className="hover:text-blue-400"
+              className="hover:text-[#FF5A5F]"
             >
               info@ftrealestate.com
             </a>
           </p>
           <p className="text-gray-300">
             Phone:{" "}
-            <a href="tel:+1234567890" className="hover:text-blue-400">
+            <a href="tel:+1234567890" className="hover:text-[#FF5A5F]">
               +1 234 567 890
             </a>
           </p>
           <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+            <a href="#" className="text-gray-400 hover:text-[#FF5A5F] text-xl">
               <FaFacebookF />
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+            <a href="#" className="text-gray-400 hover:text-[#FF5A5F] text-xl">
               <FaTwitter />
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+            <a href="#" className="text-gray-400 hover:text-[#FF5A5F] text-xl">
               <FaInstagram />
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+            <a href="#" className="text-gray-400 hover:text-[#FF5A5F] text-xl">
               <FaLinkedinIn />
             </a>
           </div>
@@ -93,7 +93,7 @@ const Footer = () => {
               placeholder="Enter your email"
               className="w-full px-4 py-2 rounded-md focus:outline-none text-black"
             />
-            <button className="bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-600">
+            <button className="bg-[#FF5A5F] px-4 py-2 rounded-md hover:bg-[#e96368]">
               Subscribe
             </button>
           </form>

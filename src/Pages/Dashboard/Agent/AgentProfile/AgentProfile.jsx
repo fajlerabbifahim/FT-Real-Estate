@@ -8,7 +8,7 @@ const AgentProfile = () => {
     <div className="max-w-md mx-auto mt-10 bg-gray-50 shadow-lg rounded-xl overflow-hidden border border-gray-200">
       <div className="flex flex-col items-center p-6">
         <img
-          className="w-24 h-24 rounded-full border-2 border-blue-500 shadow-md"
+          className="w-24 h-24 rounded-full border-2 border-[#FF5A5F] shadow-md"
           src={userData?.photo || "https://via.placeholder.com/150"}
           alt="User Avatar"
         />

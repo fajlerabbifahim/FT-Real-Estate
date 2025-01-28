@@ -208,7 +208,10 @@ const AddProperty = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary w-full">
+        <button
+          type="submit"
+          className="btn hover:duration-700 w-full text-[#FF5A5F] hover:bg-[#FF5A5F]  border border-[#FF5A5F] hover:text-white"
+        >
           Add Property
         </button>
       </form>

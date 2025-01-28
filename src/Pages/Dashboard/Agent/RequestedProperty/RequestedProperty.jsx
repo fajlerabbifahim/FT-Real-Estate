@@ -60,7 +60,7 @@ const RequestedProperty = () => {
                   <div className="dropdown dropdown-left dropdown-hover">
                     <label
                       tabIndex={0}
-                      className="btn btn-xs btn-info flex items-center gap-1"
+                      className="btn btn-xs btn-info bg-[#FF5A5F]  border-none hover:bg-[#df6367] flex items-center gap-1"
                     >
                       <FaEllipsisV />
                     </label>
