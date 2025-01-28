@@ -20,6 +20,7 @@ import MyAddedProperty from "../Pages/Dashboard/Agent/MyAddedProperty/MyAddedPro
 import ManageProperty from "../Pages/Dashboard/Admin/ManageProperty/ManageProperty";
 import ManageReview from "../Pages/Dashboard/Admin/ManageReview/ManageReview";
 import RequestedProperty from "../Pages/Dashboard/Agent/RequestedProperty/RequestedProperty";
+import MySoldProperty from "../Pages/Dashboard/Agent/mySoldProperty/mySoldProperty";
 
 const Router = createBrowserRouter([
   {
@@ -65,7 +66,7 @@ const Router = createBrowserRouter([
       { path: "addProperty", element: <AddProperty /> },
       { path: "myAddedProperty/:email", element: <MyAddedProperty /> },
       { path: "requestedProperty", element: <RequestedProperty /> },
-
+      { path: "mySoldProperty", element: <MySoldProperty /> },
       //admin route
       { path: "adminProfile", element: <AdminProfile /> },
       { path: "users", element: <ManageUser /> },
