@@ -105,10 +105,7 @@ npm run build
 npm run preview
 ```
 
-## 🖥️ Usage
-- Users can sign up, book deliveries, track parcels, and leave reviews.
-- Admins can manage users, monitor deliveries, and process payments.
-- Secure authentication & authorization is handled via Firebase.
+
 
 ## 🔑 Admin Credentials
 Use the following credentials to log in as an admin:
@@ -128,9 +125,5 @@ Password: 123456
 
 
 
-## License
 
-This project is open-source and available for modification.
-
----
 
