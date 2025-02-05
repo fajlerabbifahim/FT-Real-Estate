@@ -17,7 +17,7 @@ FT Real Estate is a modern real estate platform designed for users, agents, and 
 - Browse available properties
 - Add properties to wishlist
 - Comment on properties
-- Make money offers within a specific price range
+- Offers a Property within a specific price range
 - Withdraw or modify offers (if applicable)
 - View offer status (accepted/rejected)
 
@@ -43,4 +43,3 @@ This project is open-source and available for modification.
 
 ---
 
-Feel free to modify this README based on any additional features you implement!
