@@ -45,26 +45,21 @@ FT Real Estate is a modern real estate platform designed for users, agents, and 
 This project relies on the following dependencies:
 
 ```json
-{
-  "dependencies": {
-    "@stripe/react-stripe-js": "^3.1.1",
-    "@stripe/stripe-js": "^5.5.0",
-    "@tanstack/react-query": "^5.64.0",
-    "apexcharts": "^4.3.0",
+
+ "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
     "axios": "^1.7.9",
-    "firebase": "^11.1.0",
-    "leaflet": "^1.9.4",
-    "lucide-react": "^0.471.1",
-    "react": "^19.0.0-rc.1",
-    "react-apexcharts": "^1.7.0",
+    "firebase": "^11.2.0",
+    "moment": "^2.30.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.4.0",
-    "react-leaflet": "^5.0.0",
-    "react-router-dom": "^7.1.1",
-    "sweetalert2": "^11.15.10",
-    "tailwindcss-animate": "^1.0.7"
-  }
-}
+    "react-router-dom": "^7.1.2",
+    "sweetalert2": "^11.15.10"
+  },
+  
 ```
 
 ## 🛠️ Installation & Setup
