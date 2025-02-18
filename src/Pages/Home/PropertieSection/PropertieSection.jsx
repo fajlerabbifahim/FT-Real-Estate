@@ -21,7 +21,7 @@ function PropertieSection() {
           "Search over 2000 properties to rent from the top agents in the country"
         }
       />
-      <div className=" px-4">
+      <div className="px-12">
         <h2 className="text-2xl font-bold text-center mb-6">Our Properties</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {data.map((property) => (

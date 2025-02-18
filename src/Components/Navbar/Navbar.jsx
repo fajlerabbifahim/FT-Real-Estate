@@ -135,7 +135,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden backdrop-blur-lg text-gray-600 absolute top-16 left-0 w-full transition-all duration-500 ease-in-out ${
+        className={`md:hidden bg-slate-50 text-gray-600 absolute top-16 left-0 w-full transition-all duration-500 ease-in-out ${
           menuOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
         }`}
       >

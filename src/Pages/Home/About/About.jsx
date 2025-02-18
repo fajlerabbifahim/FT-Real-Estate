@@ -1,11 +1,9 @@
-import React from "react";
-
 import aboutImage from "../../../assets/AboutImage/aboutimage.jpg";
 
 const About = () => {
   return (
     <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-6 lg:px-16">
+      <div className="container mx-auto px-6 lg:px-11">
         <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
           About FT Real Estate
         </h2>
