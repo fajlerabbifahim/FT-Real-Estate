@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 function Banner() {
   return (
     <div
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-[500px] bg-cover bg-center rounded-[20px] mt-16 mx-11"
       style={{
         backgroundImage: `url(${bannerIMG})`,
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[20px] "></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="text-5xl font-bold mb-4">Find Your Dream Property</h1>
+        <h1 className="text-6xl font-bold mb-4">Find Your Dream Property</h1>
         <p className="text-lg mb-6">
           Discover luxurious homes, apartments, and offices that match your
           lifestyle.
