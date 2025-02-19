@@ -23,6 +23,7 @@ import RequestedProperty from "../Pages/Dashboard/Agent/RequestedProperty/Reques
 import MySoldProperty from "../Pages/Dashboard/Agent/mySoldProperty/mySoldProperty";
 import AdminHome from "../Pages/Dashboard/Admin/Home/AdminHome";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AgentHome from "../Pages/Dashboard/Agent/AgentHome/AgentHome";
 
 const Router = createBrowserRouter([
   {
@@ -63,7 +64,7 @@ const Router = createBrowserRouter([
       { path: "reviews/:email", element: <MyReviews /> },
 
       //agent route
-
+      { path: "home", element: <AgentHome /> },
       { path: "agentProfile", element: <AgentProfile /> },
       { path: "addProperty", element: <AddProperty /> },
       { path: "myAddedProperty/:email", element: <MyAddedProperty /> },

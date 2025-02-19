@@ -73,7 +73,7 @@ const DashBoardLayout = () => {
                       }`
                     }
                   >
-                    <FaUser size={20} />
+                    <MdDashboard size={20} />
                     <span>User Home</span>
                   </NavLink>
                 </li>
@@ -160,6 +160,21 @@ const DashBoardLayout = () => {
                   >
                     <FaHome size={20} />
                     <span>Home</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/dashboard/home"
+                    className={({ isActive }) =>
+                      `flex items-center space-x-3 px-4 py-2 rounded ${
+                        isActive
+                          ? "bg-[#FF5A5F] text-white"
+                          : "hover:bg-[#c2d5da]"
+                      }`
+                    }
+                  >
+                    <MdDashboard size={20} />
+                    <span>Agent Home </span>
                   </NavLink>
                 </li>
                 <li>
