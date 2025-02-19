@@ -21,6 +21,8 @@ import ManageProperty from "../Pages/Dashboard/Admin/ManageProperty/ManageProper
 import ManageReview from "../Pages/Dashboard/Admin/ManageReview/ManageReview";
 import RequestedProperty from "../Pages/Dashboard/Agent/RequestedProperty/RequestedProperty";
 import MySoldProperty from "../Pages/Dashboard/Agent/mySoldProperty/mySoldProperty";
+import AdminHome from "../Pages/Dashboard/Admin/Home/AdminHome";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 
 const Router = createBrowserRouter([
   {
@@ -53,7 +55,7 @@ const Router = createBrowserRouter([
     element: <DashBoardLayout />,
     children: [
       // user route
-
+      { path: "home", element: <UserHome /> },
       { path: "myProfile", element: <MyProfile /> },
       { path: "wishlist/:email", element: <WishList /> },
       { path: "makeOffer/:id", element: <MakeOffer /> },
@@ -68,6 +70,7 @@ const Router = createBrowserRouter([
       { path: "requestedProperty", element: <RequestedProperty /> },
       { path: "mySoldProperty", element: <MySoldProperty /> },
       //admin route
+      { path: "home", element: <AdminHome /> },
       { path: "adminProfile", element: <AdminProfile /> },
       { path: "users", element: <ManageUser /> },
       { path: "allProperties", element: <ManageProperty /> },

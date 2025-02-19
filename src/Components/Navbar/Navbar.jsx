@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegHeart, FaTimes } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
@@ -58,16 +58,21 @@ const Navbar = () => {
       >
         About
       </NavLink>
-      <NavLink
-        to="/dashboard/myProfile"
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#FF5A5F] font-semibold"
-            : "hover:text-gray-300 transition duration-300"
-        }
-      >
-        Dashboard
-      </NavLink>
+
+      {user?.email ? (
+        <NavLink
+          to="/dashboard/home"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#FF5A5F] font-semibold"
+              : "hover:text-gray-300 transition duration-300"
+          }
+        >
+          Dashboard
+        </NavLink>
+      ) : (
+        ""
+      )}
     </>
   );
 
